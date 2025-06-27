@@ -84,3 +84,16 @@ p {
 .modal-content button:hover {
   background: #444;
 }
+.cbg-footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #777;
+  font-style: italic;
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { color: #777; }
+  50% { color: #000; text-shadow: 0 0 6px rgba(0,0,0,0.4); }
+  100% { color: #777; }
+}
