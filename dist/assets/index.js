@@ -30,12 +30,17 @@ const data = [
 const root = document.getElementById('root');
 const grid = document.createElement('div');
 grid.className = 'grid';
+grid.setAttribute('role', 'grid');
 
 data.forEach(sign => {
   const card = document.createElement('div');
   card.className = 'card';
-  card.innerHTML = `<strong>${sign.letter}</strong><br><img src='${sign.img}' alt='${sign.letter}' />`;
+  card.setAttribute('role', 'button');
+  card.setAttribute('tabindex', '0');
+  card.setAttribute('aria-label', `Learn ASL letter ${sign.letter}`);
+  card.innerHTML = `<strong>${sign.letter}</strong><br><img src='${sign.img}' alt='ASL letter ${sign.letter}' />`;
   card.onclick = () => showModal(sign);
+  card.onkeydown = (e) => { if (e.key === 'Enter') showModal(sign); };
   grid.appendChild(card);
 });
 root.appendChild(grid);
@@ -45,9 +50,9 @@ function showModal(sign) {
   overlay.className = 'modal';
   overlay.onclick = () => overlay.remove();
   overlay.innerHTML = `
-    <div class='modal-content'>
+    <div class='modal-content' role='dialog' aria-modal='true'>
       <h2>${sign.letter}</h2>
-      <img src='${sign.img}' alt='${sign.letter}' />
+      <img src='${sign.img}' alt='ASL letter ${sign.letter}' />
       <p>${sign.desc}</p>
       <button onclick='this.closest(".modal").remove()'>Close</button>
     </div>
