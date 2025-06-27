@@ -1,1 +1,25 @@
-  # React config
+
+---
+
+### 📦 `package.json` (Vite + React setup)
+
+```json
+{
+  "name": "asl-alphabet-learning-tool",
+  "version": "1.0.0",
+  "description": "Interactive ASL learning tool with real signs and printable support.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "vite": "^4.5.0",
+    "@vitejs/plugin-react": "^4.0.0"
+  }
+}
+
