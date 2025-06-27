@@ -1,9 +1,4 @@
 
----
-
-### 📦 `package.json` (Vite + React setup)
-
-```json
 {
   "name": "asl-alphabet-learning-tool",
   "version": "1.0.0",
